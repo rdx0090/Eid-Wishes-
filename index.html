@@ -45,6 +45,32 @@
             z-index: 1;
         }
 
+        .creator-ad-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .creator-name {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1em;
+            color: #DAA520;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            animation: pulseCreator 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulseCreator {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
         img#eidGif {
             max-width: 100%;
             height: auto;
@@ -104,7 +130,7 @@
             font-family: 'Merriweather', serif;
             text-align: left;
         }
-        
+
         button.main-action-btn {
             background-color: #228B22;
             color: white;
@@ -124,7 +150,7 @@
             justify-content: center;
             gap: 10px;
         }
-        
+
         .main-action-btn svg {
             width: 26px;
             height: 26px;
@@ -208,24 +234,37 @@
             margin: 4px 0;
         }
 
-        /* === MODIFIED STYLE FOR CENTERING THE AD === */
+        /* === STYLE FOR BOTTOM AD CONTAINER (RE-ADDED) === */
         .creator-credit {
             margin-top: 35px;
             padding-top: 15px;
             border-top: 1px dashed #DAA520;
-            
-            /* Flexbox properties to perfectly center the ad */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
+
     </style>
 </head>
 <body>
     <canvas id="fireworksCanvas"></canvas>
 
     <div class="container">
+
+        <div class="creator-ad-banner">
+            <p class="creator-name">Created By Shahin Mangral</p>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'a05c1e96bdf4b45b2510c0829bf0d51c',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/a05c1e96bdf4b45b2510c0829bf0d51c/invoke.js"></script>
+        </div>
+
         <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation">
         <div id="countdown" class="countdown-timer"></div>
 
@@ -258,7 +297,7 @@
             <div id="visitorList" class="visitor-list">None yet.</div>
         </div>
 
-        <!-- === ADVERTISEMENT CONTAINER (NOW PERFECTLY CENTERED) === -->
+        <!-- === BOTTOM ADVERTISEMENT CONTAINER (RE-ADDED) === -->
         <div class="creator-credit">
              <script type="text/javascript">
                 atOptions = {
@@ -271,7 +310,7 @@
             </script>
             <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
         </div>
-        
+
     </div>
 
 <script>
