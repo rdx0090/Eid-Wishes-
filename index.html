@@ -208,16 +208,16 @@
             margin: 4px 0;
         }
 
-        /* This style now applies to the ad container */
+        /* === MODIFIED STYLE FOR CENTERING THE AD === */
         .creator-credit {
-            font-family: 'Merriweather', serif;
-            font-size: 0.95em;
-            color: #4CAF50;
-            font-weight: bold;
             margin-top: 35px;
             padding-top: 15px;
             border-top: 1px dashed #DAA520;
-            text-align: center; /* Center the ad iframe */
+            
+            /* Flexbox properties to perfectly center the ad */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
     </style>
@@ -258,7 +258,7 @@
             <div id="visitorList" class="visitor-list">None yet.</div>
         </div>
 
-        <!-- === ADVERTISEMENT REPLACING CREATOR CREDIT === -->
+        <!-- === ADVERTISEMENT CONTAINER (NOW PERFECTLY CENTERED) === -->
         <div class="creator-credit">
              <script type="text/javascript">
                 atOptions = {
