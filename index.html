@@ -269,9 +269,11 @@
                     'params' : {}
                 };
             </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
+            <!-- FIX 1: Added async to the ad script to stop it from blocking the page -->
+            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js" async></script>
         </div>
 
+        <!-- FIX 2: Directly put the image URL here -->
         <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
 
         <div id="countdown" class="countdown-timer"></div>
@@ -312,7 +314,7 @@
     </div>
     
     <script>
-        // FIREWORKS SCRIPT (No changes here)
+        // FIREWORKS SCRIPT (No changes here, it's fine)
         const fireworksCanvas=document.getElementById("fireworksCanvas"),ctx=fireworksCanvas.getContext("2d");let fireworks=[],particles=[];fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight;class Firework{constructor(t,e,i,o,s){this.x=t,this.y=e,this.targetX=i,this.targetY=o,this.color=s,this.speed=3,this.angle=Math.atan2(o-e,i-t),this.distanceToTarget=Math.sqrt((i-t)**2+(o-e)**2),this.distanceTraveled=0,this.coordinates=[],this.coordinateCount=3;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed,this.distanceTraveled=Math.sqrt((this.targetX-this.x)**2+(this.targetY-this.y)**2),this.distanceTraveled<=this.speed&&(createParticles(this.targetX,this.targetY,this.color),fireworks.splice(t,1))}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y),ctx.strokeStyle=this.color,ctx.lineWidth=3,ctx.stroke()}}class Particle{constructor(t,e,i){this.x=t,this.y=e,this.color=i,this.size=2*Math.random()+1,this.speed=5*Math.random()+1,this.angle=2*Math.random()*Math.PI,this.friction=.95,this.gravity=1,this.alpha=1,this.decay=.015*Math.random()+.015,this.coordinates=[],this.coordinateCount=5;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.speed*=this.friction,this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed+this.gravity,this.alpha-=this.decay,this.alpha<=this.decay&&particles.splice(t,1)}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y);const t=parseInt(this.color.substring(this.color.indexOf("(")+1,this.color.indexOf(",")));ctx.strokeStyle=`hsla(${t+60*Math.random()-30},100%,${50+20*Math.random()-10}%,${this.alpha})`,ctx.lineWidth=this.size,ctx.stroke()}}function createParticles(t,e,i){let o=100;for(;o--;)particles.push(new Particle(t,e,i))}let lLT=0,lI=500+1e3*Math.random();function launchFirework(){if(fireworks.length<20){const t=fireworksCanvas.width*Math.random(),e=fireworksCanvas.height,i=t+(Math.random()-.5)*(.6*fireworksCanvas.width),o=0.45*Math.random()*fireworksCanvas.height+0.05*fireworksCanvas.height,s=`hsl(${360*Math.random()},100%,50%)`;fireworks.push(new Firework(t,e,i,o,s)),lLT=Date.now(),lI=200+500*Math.random()}}function animateFireworks(){requestAnimationFrame(animateFireworks),ctx.fillStyle="rgba(0,0,0,0.1)",ctx.fillRect(0,0,fireworksCanvas.width,fireworksCanvas.height);let t=fireworks.length;for(;t--;)fireworks[t].update(t),fireworks[t].draw();let e=particles.length;for(;e--;)particles[e].update(e),particles[e].draw();const i=Date.now();i-lLT>lI&&launchFirework()}window.addEventListener("resize",()=>{fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight});animateFireworks();
         for (let i = 0; i < 8; i++) {
             setTimeout(launchFirework, i * 150);
@@ -320,9 +322,8 @@
 
         // MAIN PAGE LOGIC
         document.addEventListener('DOMContentLoaded', function() {
-            const gifUrl = "Eid2025.gif";
-            document.getElementById('eidGif').src = gifUrl;
-
+            // No need to set gifUrl here anymore, it's already in the HTML
+            
             const eidDate = new Date("June 7, 2025 00:00:00").getTime();
             let countdownInterval;
 
@@ -352,18 +353,11 @@
             const senderNameDisplayEl = document.getElementById('senderNameDisplay');
             
             if (sender) {
-                // Agar link mein sender ka naam hai (dost ne link khola hai)
-                // Sirf message badlo, form ko mat chupao.
                 const decodedSender = decodeURIComponent(sender);
                 greetingMessageEl.textContent = `${decodedSender} ki taraf se aapko bohat bohat Eid Mubarak!`;
                 senderNameDisplayEl.style.display = 'none';
                 document.title = `Aapko ${decodedSender} ki taraf se Eid Mubarak!`;
-                
-                // YAHAN PAR GALTI THI, ISKO HATA DIYA GAYA HAI
-                // createWishForm.style.display = 'none'; 
-
             } else {
-                // Agar link mein naam nahi hai (pehli baar open hua hai)
                 greetingMessageEl.textContent = `🎉 Eid-ul-Adha Mubarak! 🎉`;
                 senderNameDisplayEl.textContent = `Apni wishes share karein!`;
                 senderNameDisplayEl.style.display = 'block';
