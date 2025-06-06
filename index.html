@@ -9,7 +9,6 @@
         body {
             font-family: 'Merriweather', serif;
             text-align: center;
-            /* Yahan se background hata diya gaya hai */
             background-color: transparent;
             margin: 0;
             padding: 20px;
@@ -22,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* CHANGE 1: Background ke liye alag se layer banayi gayi hai */
         .background-layer {
             position: fixed;
             top: 0;
@@ -34,7 +32,7 @@
                               radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 20px 20px, 30px 30px;
             background-position: 0 0, 15px 15px;
-            z-index: -2; /* Isay sab se peechay rakha hai */
+            z-index: -2;
         }
 
         #fireworksCanvas {
@@ -43,7 +41,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* CHANGE 2: Canvas ab background layer ke ooper hai */
             z-index: -1; 
             pointer-events: none;
         }
@@ -56,7 +53,6 @@
             max-width: 550px;
             width: 95%;
             position: relative;
-            /* Container sab se ooper hai */
             z-index: 1;
         }
 
@@ -71,6 +67,7 @@
             font-family: 'Cinzel Decorative', cursive;
             font-size: 1.2em;
             color: #FF1493;
+            margin-top: 15px; /* Added some space between ad and name */
             margin-bottom: 8px;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -228,6 +225,8 @@
 
         .visitor-info {
             margin-top: 30px;
+            padding-top: 20px; /* Added padding */
+            border-top: 1px dashed #DAA520; /* Added border */
             font-size: 1em;
             color: #444;
             font-family: 'Merriweather', serif;
@@ -251,36 +250,30 @@
             margin: 4px 0;
         }
 
-        .creator-credit {
-            margin-top: 35px;
-            padding-top: 15px;
-            border-top: 1px dashed #DAA520;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
     </style>
 </head>
 <body>
-    <!-- CHANGE 3: HTML mein background layer add ki gayi hai -->
     <div class="background-layer"></div>
     <canvas id="fireworksCanvas"></canvas>
 
     <div class="container">
 
         <div class="creator-ad-banner">
-            <p class="creator-name">Created By Shahin Mangral</p>
-            <script type="text/javascript" async>
+            <!-- AD CODE MOVED HERE -->
+            <script type="text/javascript">
                 atOptions = {
-                    'key' : 'a05c1e96bdf4b45b2510c0829bf0d51c',
+                    'key' : '106d02ac509fe202fd6788c7e7a5f55e',
                     'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
+                    'height' : 60,
+                    'width' : 468,
                     'params' : {}
                 };
             </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/a05c1e96bdf4b45b2510c0829bf0d51c/invoke.js" async></script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
+            
+            <p class="creator-name">Created By Shahin Mangral</p>
+            
+            <!-- OLD SMALLER AD WAS HERE, NOW REMOVED -->
         </div>
 
         <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
@@ -316,31 +309,18 @@
             <div id="visitorList" class="visitor-list">None yet.</div>
         </div>
 
-        <div class="creator-credit">
-             <script type="text/javascript" async>
-                atOptions = {
-                    'key' : '106d02ac509fe202fd6788c7e7a5f55e',
-                    'format' : 'iframe',
-                    'height' : 60,
-                    'width' : 468,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js" async></script>
-        </div>
+        <!-- AD FROM THE BOTTOM HAS BEEN MOVED TO THE TOP -->
 
     </div>
 
 <script>
-    // === FIREWORK SCRIPT (No changes needed here, it was correct) ===
+    // FIREWORKS SCRIPT
     const fireworksCanvas=document.getElementById("fireworksCanvas"),ctx=fireworksCanvas.getContext("2d");let fireworks=[],particles=[];fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight;class Firework{constructor(t,e,i,o,s){this.x=t,this.y=e,this.targetX=i,this.targetY=o,this.color=s,this.speed=3,this.angle=Math.atan2(o-e,i-t),this.distanceToTarget=Math.sqrt((i-t)**2+(o-e)**2),this.distanceTraveled=0,this.coordinates=[],this.coordinateCount=3;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed,this.distanceTraveled=Math.sqrt((this.targetX-this.x)**2+(this.targetY-this.y)**2),this.distanceTraveled<=this.speed&&(createParticles(this.targetX,this.targetY,this.color),fireworks.splice(t,1))}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y),ctx.strokeStyle=this.color,ctx.lineWidth=3,ctx.stroke()}}class Particle{constructor(t,e,i){this.x=t,this.y=e,this.color=i,this.size=2*Math.random()+1,this.speed=5*Math.random()+1,this.angle=2*Math.random()*Math.PI,this.friction=.95,this.gravity=1,this.alpha=1,this.decay=.015*Math.random()+.015,this.coordinates=[],this.coordinateCount=5;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.speed*=this.friction,this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed+this.gravity,this.alpha-=this.decay,this.alpha<=this.decay&&particles.splice(t,1)}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y);const t=parseInt(this.color.substring(this.color.indexOf("(")+1,this.color.indexOf(",")));ctx.strokeStyle=`hsla(${t+60*Math.random()-30},100%,${50+20*Math.random()-10}%,${this.alpha})`,ctx.lineWidth=this.size,ctx.stroke()}}function createParticles(t,e,i){let o=100;for(;o--;)particles.push(new Particle(t,e,i))}let lLT=0,lI=500+1e3*Math.random();function launchFirework(){if(fireworks.length<20){const t=fireworksCanvas.width*Math.random(),e=fireworksCanvas.height,i=t+(Math.random()-.5)*(.6*fireworksCanvas.width),o=0.45*Math.random()*fireworksCanvas.height+0.05*fireworksCanvas.height,s=`hsl(${360*Math.random()},100%,50%)`;fireworks.push(new Firework(t,e,i,o,s)),lLT=Date.now(),lI=200+500*Math.random()}}function animateFireworks(){requestAnimationFrame(animateFireworks),ctx.fillStyle="rgba(0,0,0,0.1)",ctx.fillRect(0,0,fireworksCanvas.width,fireworksCanvas.height);let t=fireworks.length;for(;t--;)fireworks[t].update(t),fireworks[t].draw();let e=particles.length;for(;e--;)particles[e].update(e),particles[e].draw();const i=Date.now();i-lLT>lI&&launchFirework()}window.addEventListener("resize",()=>{fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight});animateFireworks();
-    
-    // Initial burst for "Winning Moment" effect
     for (let i = 0; i < 8; i++) {
         setTimeout(launchFirework, i * 150);
     }
 
-    // === Main Page Logic (No changes needed here) ===
+    // MAIN PAGE LOGIC
     document.addEventListener('DOMContentLoaded', function() {
         const gifUrl = "Eid2025.gif";
         document.getElementById('eidGif').src = gifUrl;
