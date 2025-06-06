@@ -55,9 +55,8 @@
 
         .creator-name {
             font-family: 'Cinzel Decorative', cursive;
-            font-size: 1.2em; /* Thora sa bara kiya */
-            /* === CHANGE: Color changed to Pink as requested === */
-            color: #FF1493; /* Deep Pink color */
+            font-size: 1.2em;
+            color: #FF1493;
             margin-bottom: 8px;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -71,7 +70,7 @@
             }
             50% {
                 transform: scale(1.1);
-                text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5); /* Pink shadow on pulse */
+                text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5);
             }
         }
 
@@ -86,7 +85,7 @@
 
         .countdown-timer {
             font-size: 1.6em;
-            color: #d82d8c; /* Matched color with pink theme */
+            color: #d82d8c;
             margin-top: 15px;
             margin-bottom: 20px;
             font-weight: bold;
@@ -256,7 +255,7 @@
 
         <div class="creator-ad-banner">
             <p class="creator-name">Created By Shahin Mangral</p>
-            <script type="text/javascript" async> /* === CHANGE: Added 'async' for faster page load === */
+            <script type="text/javascript" async>
                 atOptions = {
                     'key' : 'a05c1e96bdf4b45b2510c0829bf0d51c',
                     'format' : 'iframe',
@@ -265,10 +264,9 @@
                     'params' : {}
                 };
             </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/a05c1e96bdf4b45b2510c0829bf0d51c/invoke.js" async></script> <!-- === CHANGE: Added 'async' === -->
+            <script type="text/javascript" src="//www.highperformanceformat.com/a05c1e96bdf4b45b2510c0829bf0d51c/invoke.js" async></script>
         </div>
 
-        <!-- === CHANGE: Added loading="lazy" and decoding="async" for much faster initial page load === -->
         <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
         
         <div id="countdown" class="countdown-timer"></div>
@@ -303,7 +301,7 @@
         </div>
 
         <div class="creator-credit">
-             <script type="text/javascript" async> /* === CHANGE: Added 'async' for faster page load === */
+             <script type="text/javascript" async>
                 atOptions = {
                     'key' : '106d02ac509fe202fd6788c7e7a5f55e',
                     'format' : 'iframe',
@@ -312,7 +310,7 @@
                     'params' : {}
                 };
             </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js" async></script> <!-- === CHANGE: Added 'async' === -->
+            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js" async></script>
         </div>
 
     </div>
@@ -320,9 +318,7 @@
 <script>
     // Minified Firework script (No changes needed here)
     const fireworksCanvas=document.getElementById("fireworksCanvas"),ctx=fireworksCanvas.getContext("2d");let fireworks=[],particles=[];fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight;class Firework{constructor(t,e,i,o,s){this.x=t,this.y=e,this.targetX=i,this.targetY=o,this.color=s,this.speed=3,this.angle=Math.atan2(o-e,i-t),this.distanceToTarget=Math.sqrt((i-t)**2+(o-e)**2),this.distanceTraveled=0,this.coordinates=[],this.coordinateCount=3;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed,this.distanceTraveled=Math.sqrt((this.targetX-this.x)**2+(this.targetY-this.y)**2),this.distanceTraveled<=this.speed&&(createParticles(this.targetX,this.targetY,this.color),fireworks.splice(t,1))}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y),ctx.strokeStyle=this.color,ctx.lineWidth=3,ctx.stroke()}}class Particle{constructor(t,e,i){this.x=t,this.y=e,this.color=i,this.size=2*Math.random()+1,this.speed=5*Math.random()+1,this.angle=2*Math.random()*Math.PI,this.friction=.95,this.gravity=1,this.alpha=1,this.decay=.015*Math.random()+.015,this.coordinates=[],this.coordinateCount=5;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.speed*=this.friction,this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed+this.gravity,this.alpha-=this.decay,this.alpha<=this.decay&&particles.splice(t,1)}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y);const t=parseInt(this.color.substring(this.color.indexOf("(")+1,this.color.indexOf(",")));ctx.strokeStyle=`hsla(${t+60*Math.random()-30},100%,${50+20*Math.random()-10}%,${this.alpha})`,ctx.lineWidth=this.size,ctx.stroke()}}function createParticles(t,e,i){let o=100;for(;o--;)particles.push(new Particle(t,e,i))}let lLT=0,lI=1000+1e3*Math.random();function launchFirework(){if(fireworks.length<10){const t=fireworksCanvas.width*Math.random(),e=fireworksCanvas.height,i=t+(Math.random()-.5)*(.6*fireworksCanvas.width),o=0.45*Math.random()*fireworksCanvas.height+0.05*fireworksCanvas.height,s=`hsl(${360*Math.random()},100%,50%)`;fireworks.push(new Firework(t,e,i,o,s)),lLT=Date.now(),lI=1000+2e3*Math.random()}}function animateFireworks(){requestAnimationFrame(animateFireworks),ctx.fillStyle="rgba(0,0,0,0.1)",ctx.fillRect(0,0,fireworksCanvas.width,fireworksCanvas.height);let t=fireworks.length;for(;t--;)fireworks[t].update(t),fireworks[t].draw();let e=particles.length;for(;e--;)particles[e].update(e),particles[e].draw();const i=Date.now();i-lLT>lI&&launchFirework()}window.addEventListener("resize",()=>{fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight}),animateFireworks();
-    // End Firework script
 
-    // === CHANGE: Main script logic moved inside DOMContentLoaded for much faster execution ===
     document.addEventListener('DOMContentLoaded', function() {
         const gifUrl = "Eid2025.gif";
         document.getElementById('eidGif').src = gifUrl;
@@ -357,9 +353,11 @@
 
         if (sender) {
             const decodedSender = decodeURIComponent(sender);
-            greetingMessageEl.textContent = `Eid-ul-Adha Mubarak from ${decodedSender}!`;
+            // === CHANGE: Personalized greeting message in Roman Urdu as requested ===
+            greetingMessageEl.textContent = `${decodedSender} ki taraf se aapko bohat bohat Eid Mubarak!`;
             senderNameDisplayEl.style.display = 'none';
-            document.title = `Eid-ul-Adha Mubarak from ${decodedSender}`;
+            // === CHANGE: Personalized page title for a better look in browser tab ===
+            document.title = `Aapko ${decodedSender} ki taraf se Eid Mubarak!`;
         } else {
             greetingMessageEl.textContent = `🎉 Eid-ul-Adha Mubarak! 🎉`;
             senderNameDisplayEl.textContent = `Apni wishes share karein!`;
@@ -369,7 +367,7 @@
         updateVisitorDisplay();
         updateCountdown();
         countdownInterval = setInterval(updateCountdown, 1000);
-    }); // End of DOMContentLoaded
+    });
 
     function generateAndShareViaWhatsApp() {
         const nameInput = document.getElementById('nameInput');
