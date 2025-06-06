@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ur">
 <head>
     <meta charset="UTF-8">
@@ -22,473 +21,455 @@
             overflow-x: hidden;
         }
 
-.background-layer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #004d00;
-        background-image: radial-gradient(circle, rgba(255,215,0,0.05) 1px, transparent 1px),
-                          radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-        background-size: 20px 20px, 30px 30px;
-        background-position: 0 0, 15px 15px;
-        z-index: -2;
-    }
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #004d00;
+            background-image: radial-gradient(circle, rgba(255,215,0,0.05) 1px, transparent 1px),
+                              radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px, 30px 30px;
+            background-position: 0 0, 15px 15px;
+            z-index: -2;
+        }
 
-    #fireworksCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; 
-        pointer-events: none;
-    }
+        #fireworksCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            pointer-events: none;
+        }
 
-    .container {
-        background-color: #fffaf0;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 5px #ffd700;
-        max-width: 550px;
-        width: 95%;
-        position: relative;
-        z-index: 1;
-    }
+        .container {
+            background-color: #fffaf0;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 5px #ffd700;
+            max-width: 550px;
+            width: 95%;
+            position: relative;
+            z-index: 1;
+        }
 
-    .creator-ad-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 15px;
-    }
+        .creator-ad-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-    .creator-name {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.2em;
-        color: #FF1493;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        animation: pulseCreator 2.5s infinite ease-in-out;
-        margin-top: 25px;
-        padding-top: 15px;
-        border-top: 1px dashed #DAA520;
-        margin-bottom: 0;
-    }
-
-    @keyframes pulseCreator {
-        0%, 100% {
-            transform: scale(1);
+        .creator-name {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.2em;
+            color: #FF1493;
+            font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            animation: pulseCreator 2.5s infinite ease-in-out;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed #DAA520;
+            margin-bottom: 0;
         }
-        50% {
-            transform: scale(1.1);
-            text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5);
+
+        @keyframes pulseCreator {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            }
+            50% {
+                transform: scale(1.1);
+                text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5);
+            }
         }
-    }
 
-    img#eidGif {
-        max-width: 100%;
-        height: auto;
-        border-radius: 15px;
-        border: 4px solid #DAA520;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        margin-bottom: 15px;
-    }
+        img#eidGif {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 4px solid #DAA520;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+        }
 
-    .countdown-timer {
-        font-size: 1.6em;
-        color: #d82d8c;
-        margin-top: 15px;
-        margin-bottom: 20px;
-        font-weight: bold;
-        font-family: 'Merriweather', serif;
-        line-height: 1.4;
-    }
+        .countdown-timer {
+            font-size: 1.6em;
+            color: #d82d8c;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-family: 'Merriweather', serif;
+            line-height: 1.4;
+        }
 
-    .greeting {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 2em;
-        color: #8B4513;
-        margin-bottom: 10px;
-        font-weight: bold;
-        line-height: 1.3;
-        animation: pulseGreeting 3s infinite ease-in-out;
-    }
+        .greeting {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2em;
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-weight: bold;
+            line-height: 1.3;
+            animation: pulseGreeting 3s infinite ease-in-out;
+        }
 
-    @keyframes pulseGreeting {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
+        @keyframes pulseGreeting {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
-    .sender-info {
-        font-family: 'Merriweather', serif;
-        font-size: 1.3em;
-        color: #006400;
-        margin-bottom: 25px;
-        font-weight: bold;
-    }
+        .sender-info {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: #006400;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
 
-    p, label {
-        font-family: 'Merriweather', serif;
-        font-size: 1.1em;
-        color: #555;
-    }
+        p, label {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            color: #555;
+        }
 
-    input[type="text"] {
-        width: calc(100% - 24px);
-        padding: 12px;
-        margin-bottom: 20px;
-        border: 2px solid #DAA520;
-        border-radius: 8px;
-        font-size: 1.1em;
-        font-family: 'Merriweather', serif;
-        text-align: left;
-    }
+        input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #DAA520;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-family: 'Merriweather', serif;
+            text-align: left;
+        }
 
-    button.main-action-btn {
-        background-color: #228B22;
-        color: white;
-        padding: 14px 25px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1.15em;
-        font-family: 'Merriweather', serif;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        margin: 5px auto 20px;
-        animation: pulseButton 2.5s infinite ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
+        button.main-action-btn {
+            background-color: #228B22;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.15em;
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 5px auto 20px;
+            animation: pulseButton 2.5s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-    .main-action-btn svg {
-        width: 26px;
-        height: 26px;
-    }
+        .main-action-btn svg {
+            width: 26px;
+            height: 26px;
+        }
 
-    button.main-action-btn:hover {
-        background-color: #3CB371;
-        transform: translateY(-2px) scale(1.03);
-        animation-play-state: paused;
-    }
+        button.main-action-btn:hover {
+            background-color: #3CB371;
+            transform: translateY(-2px) scale(1.03);
+            animation-play-state: paused;
+        }
 
-    @keyframes pulseButton {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.03); }
-        100% { transform: scale(1); }
-    }
+        @keyframes pulseButton {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
 
-    #generatedLinkContainer {
-        margin-top: 25px;
-        word-wrap: break-word;
-        background-color: #f0fff0;
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid #90ee90;
-    }
+        #generatedLinkContainer {
+            margin-top: 25px;
+            word-wrap: break-word;
+            background-color: #f0fff0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #90ee90;
+        }
 
-    #generatedLinkContainer p {
-        font-size: 1em;
-        color: #333;
-        margin-bottom: 8px;
-    }
+        #generatedLinkContainer p {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 8px;
+        }
 
-    #generatedLink {
-        font-weight: bold;
-        color: #007bff;
-        display: block;
-        margin-bottom: 10px;
-        direction: ltr;
-        padding: 8px;
-        background-color: #e9ecef;
-        border-radius: 4px;
-        font-size: 0.95em;
-    }
-    #generatedLinkContainer .action-buttons button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-        margin: 5px 3px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    #generatedLinkContainer .action-buttons button.copy-btn { background-color: #DAA520; }
-    #generatedLinkContainer .action-buttons button.copy-btn:hover { background-color: #B8860B; }
-    #generatedLinkContainer .action-buttons button.share-btn { background-color: #17a2b8; }
-    #generatedLinkContainer .action-buttons button.share-btn:hover { background-color: #138496; }
+        #generatedLink {
+            font-weight: bold;
+            color: #007bff;
+            display: block;
+            margin-bottom: 10px;
+            direction: ltr;
+            padding: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        #generatedLinkContainer .action-buttons button {
+            padding: 8px 15px;
+            font-size: 0.9em;
+            margin: 5px 3px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #generatedLinkContainer .action-buttons button.copy-btn { background-color: #DAA520; }
+        #generatedLinkContainer .action-buttons button.copy-btn:hover { background-color: #B8860B; }
+        #generatedLinkContainer .action-buttons button.share-btn { background-color: #17a2b8; }
+        #generatedLinkContainer .action-buttons button.share-btn:hover { background-color: #138496; }
 
-    .visitor-info {
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px dashed #DAA520;
-        font-size: 1em;
-        color: #444;
-        font-family: 'Merriweather', serif;
-    }
+        .visitor-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #DAA520;
+            font-size: 1em;
+            color: #444;
+            font-family: 'Merriweather', serif;
+        }
 
-    .visitor-info p { margin: 8px 0; }
+        .visitor-info p { margin: 8px 0; }
 
-    .visitor-list {
-        max-height: 80px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-top: 8px;
-        text-align: left;
-        font-size: 0.9em;
-        background-color: #f8f8f8;
-        border-radius: 5px;
-    }
-    .visitor-list p {
-        font-family: 'Merriweather', serif;
-        margin: 4px 0;
-    }
-
-</style>
-
+        .visitor-list {
+            max-height: 80px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 8px;
+            text-align: left;
+            font-size: 0.9em;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+        .visitor-list p {
+            font-family: 'Merriweather', serif;
+            margin: 4px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="background-layer"></div>
     <canvas id="fireworksCanvas"></canvas>
 
-<div class="container">
+    <div class="container">
 
-    <div class="creator-ad-banner">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '106d02ac509fe202fd6788c7e7a5f55e',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
-    </div>
-
-    <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
-
-    <div id="countdown" class="countdown-timer"></div>
-
-    <div id="greetingMessage" class="greeting">Eid-ul-Adha Mubarak!</div>
-    <div id="senderNameDisplay" class="sender-info"></div>
-
-    <!-- ***** CHANGE 1: WRAP THE FORM IN A DIV ***** -->
-    <div id="createWishForm">
-        <p>Apna naam likhein aur doston ke saath share karein:</p>
-        <input type="text" id="nameInput" placeholder="Yahan apna naam likhein">
-
-        <button onclick="generateAndShareViaWhatsApp()" class="main-action-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-38.2 0-73.7-14.7-101.6-40.4l-7.1-4.2-75.8 19.9L53.9 398l-4.4-7.3c-18.5-30.7-29.9-65.7-29.9-102.7 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5c-.1 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-            </svg>
-            <span>Share With Friends</span>
-        </button>
-    </div>
-
-    <div id="generatedLinkContainer" style="display:none;">
-        <p>Aapka link tayyar hai:</p>
-        <span id="generatedLink"></span>
-        <div class="action-buttons">
-            <button onclick="copyLink()" class="copy-btn">Copy Karein</button>
-            <button onclick="shareOnOtherApps()" class="share-btn">Aur Apps Par Share Karein</button>
+        <div class="creator-ad-banner">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '106d02ac509fe202fd6788c7e7a5f55e',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
         </div>
-    </div>
 
-    <div class="visitor-info">
-        <p><strong>Link Creation Stats:</strong></p>
-        <p>Total creators (this browser): <span id="visitorCount">0</span></p>
-        <p>Names of creators (this browser):</p>
-        <div id="visitorList" class="visitor-list">None yet.</div>
+        <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
+
+        <div id="countdown" class="countdown-timer"></div>
+
+        <div id="greetingMessage" class="greeting">Eid-ul-Adha Mubarak!</div>
+        <div id="senderNameDisplay" class="sender-info"></div>
+
+        <div id="createWishForm">
+            <p>Apna naam likhein aur doston ke saath share karein:</p>
+            <input type="text" id="nameInput" placeholder="Yahan apna naam likhein">
+
+            <button onclick="generateAndShareViaWhatsApp()" class="main-action-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-38.2 0-73.7-14.7-101.6-40.4l-7.1-4.2-75.8 19.9L53.9 398l-4.4-7.3c-18.5-30.7-29.9-65.7-29.9-102.7 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5c-.1 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                </svg>
+                <span>Share With Friends</span>
+            </button>
+        </div>
+
+        <div id="generatedLinkContainer" style="display:none;">
+            <p>Aapka link tayyar hai:</p>
+            <span id="generatedLink"></span>
+            <div class="action-buttons">
+                <button onclick="copyLink()" class="copy-btn">Copy Karein</button>
+                <button onclick="shareOnOtherApps()" class="share-btn">Aur Apps Par Share Karein</button>
+            </div>
+        </div>
+
+        <div class="visitor-info">
+            <p><strong>Link Creation Stats:</strong></p>
+            <p>Total creators (this browser): <span id="visitorCount">0</span></p>
+            <p>Names of creators (this browser):</p>
+            <div id="visitorList" class="visitor-list">None yet.</div>
+        </div>
+        
+        <p class="creator-name">Created By Shahin Mangral</p>
+
     </div>
     
-    <p class="creator-name">Created By Shahin Mangral</p>
+    <script>
+        // FIREWORKS SCRIPT (No changes here)
+        const fireworksCanvas=document.getElementById("fireworksCanvas"),ctx=fireworksCanvas.getContext("2d");let fireworks=[],particles=[];fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight;class Firework{constructor(t,e,i,o,s){this.x=t,this.y=e,this.targetX=i,this.targetY=o,this.color=s,this.speed=3,this.angle=Math.atan2(o-e,i-t),this.distanceToTarget=Math.sqrt((i-t)**2+(o-e)**2),this.distanceTraveled=0,this.coordinates=[],this.coordinateCount=3;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed,this.distanceTraveled=Math.sqrt((this.targetX-this.x)**2+(this.targetY-this.y)**2),this.distanceTraveled<=this.speed&&(createParticles(this.targetX,this.targetY,this.color),fireworks.splice(t,1))}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y),ctx.strokeStyle=this.color,ctx.lineWidth=3,ctx.stroke()}}class Particle{constructor(t,e,i){this.x=t,this.y=e,this.color=i,this.size=2*Math.random()+1,this.speed=5*Math.random()+1,this.angle=2*Math.random()*Math.PI,this.friction=.95,this.gravity=1,this.alpha=1,this.decay=.015*Math.random()+.015,this.coordinates=[],this.coordinateCount=5;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.speed*=this.friction,this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed+this.gravity,this.alpha-=this.decay,this.alpha<=this.decay&&particles.splice(t,1)}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y);const t=parseInt(this.color.substring(this.color.indexOf("(")+1,this.color.indexOf(",")));ctx.strokeStyle=`hsla(${t+60*Math.random()-30},100%,${50+20*Math.random()-10}%,${this.alpha})`,ctx.lineWidth=this.size,ctx.stroke()}}function createParticles(t,e,i){let o=100;for(;o--;)particles.push(new Particle(t,e,i))}let lLT=0,lI=500+1e3*Math.random();function launchFirework(){if(fireworks.length<20){const t=fireworksCanvas.width*Math.random(),e=fireworksCanvas.height,i=t+(Math.random()-.5)*(.6*fireworksCanvas.width),o=0.45*Math.random()*fireworksCanvas.height+0.05*fireworksCanvas.height,s=`hsl(${360*Math.random()},100%,50%)`;fireworks.push(new Firework(t,e,i,o,s)),lLT=Date.now(),lI=200+500*Math.random()}}function animateFireworks(){requestAnimationFrame(animateFireworks),ctx.fillStyle="rgba(0,0,0,0.1)",ctx.fillRect(0,0,fireworksCanvas.width,fireworksCanvas.height);let t=fireworks.length;for(;t--;)fireworks[t].update(t),fireworks[t].draw();let e=particles.length;for(;e--;)particles[e].update(e),particles[e].draw();const i=Date.now();i-lLT>lI&&launchFirework()}window.addEventListener("resize",()=>{fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight});animateFireworks();
+        for (let i = 0; i < 8; i++) {
+            setTimeout(launchFirework, i * 150);
+        }
 
-</div>
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
-<script>
-    // FIREWORKS SCRIPT (No changes here)
-    const fireworksCanvas=document.getElementById("fireworksCanvas"),ctx=fireworksCanvas.getContext("2d");let fireworks=[],particles=[];fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight;class Firework{constructor(t,e,i,o,s){this.x=t,this.y=e,this.targetX=i,this.targetY=o,this.color=s,this.speed=3,this.angle=Math.atan2(o-e,i-t),this.distanceToTarget=Math.sqrt((i-t)**2+(o-e)**2),this.distanceTraveled=0,this.coordinates=[],this.coordinateCount=3;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed,this.distanceTraveled=Math.sqrt((this.targetX-this.x)**2+(this.targetY-this.y)**2),this.distanceTraveled<=this.speed&&(createParticles(this.targetX,this.targetY,this.color),fireworks.splice(t,1))}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y),ctx.strokeStyle=this.color,ctx.lineWidth=3,ctx.stroke()}}class Particle{constructor(t,e,i){this.x=t,this.y=e,this.color=i,this.size=2*Math.random()+1,this.speed=5*Math.random()+1,this.angle=2*Math.random()*Math.PI,this.friction=.95,this.gravity=1,this.alpha=1,this.decay=.015*Math.random()+.015,this.coordinates=[],this.coordinateCount=5;for(;this.coordinateCount--;)this.coordinates.push([this.x,this.y])}update(t){this.coordinates.pop(),this.coordinates.unshift([this.x,this.y]),this.speed*=this.friction,this.x+=Math.cos(this.angle)*this.speed,this.y+=Math.sin(this.angle)*this.speed+this.gravity,this.alpha-=this.decay,this.alpha<=this.decay&&particles.splice(t,1)}draw(){ctx.beginPath(),ctx.moveTo(this.coordinates[this.coordinates.length-1][0],this.coordinates[this.coordinates.length-1][1]),ctx.lineTo(this.x,this.y);const t=parseInt(this.color.substring(this.color.indexOf("(")+1,this.color.indexOf(",")));ctx.strokeStyle=`hsla(${t+60*Math.random()-30},100%,${50+20*Math.random()-10}%,${this.alpha})`,ctx.lineWidth=this.size,ctx.stroke()}}function createParticles(t,e,i){let o=100;for(;o--;)particles.push(new Particle(t,e,i))}let lLT=0,lI=500+1e3*Math.random();function launchFirework(){if(fireworks.length<20){const t=fireworksCanvas.width*Math.random(),e=fireworksCanvas.height,i=t+(Math.random()-.5)*(.6*fireworksCanvas.width),o=0.45*Math.random()*fireworksCanvas.height+0.05*fireworksCanvas.height,s=`hsl(${360*Math.random()},100%,50%)`;fireworks.push(new Firework(t,e,i,o,s)),lLT=Date.now(),lI=200+500*Math.random()}}function animateFireworks(){requestAnimationFrame(animateFireworks),ctx.fillStyle="rgba(0,0,0,0.1)",ctx.fillRect(0,0,fireworksCanvas.width,fireworksCanvas.height);let t=fireworks.length;for(;t--;)fireworks[t].update(t),fireworks[t].draw();let e=particles.length;for(;e--;)particles[e].update(e),particles[e].draw();const i=Date.now();i-lLT>lI&&launchFirework()}window.addEventListener("resize",()=>{fireworksCanvas.width=window.innerWidth,fireworksCanvas.height=window.innerHeight});animateFireworks();
-    for (let i = 0; i < 8; i++) {
-        setTimeout(launchFirework, i * 150);
-    }
+        // MAIN PAGE LOGIC
+        document.addEventListener('DOMContentLoaded', function() {
+            const gifUrl = "Eid2025.gif";
+            document.getElementById('eidGif').src = gifUrl;
 
-    // MAIN PAGE LOGIC
-    document.addEventListener('DOMContentLoaded', function() {
-        const gifUrl = "Eid2025.gif";
-        document.getElementById('eidGif').src = gifUrl;
+            const eidDate = new Date("June 7, 2025 00:00:00").getTime();
+            let countdownInterval;
 
-        const eidDate = new Date("June 7, 2025 00:00:00").getTime();
-        let countdownInterval;
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = eidDate - now;
+                const countdownElement = document.getElementById("countdown");
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = eidDate - now;
-            const countdownElement = document.getElementById("countdown");
+                if (distance < 0) {
+                    countdownElement.innerHTML = "Eid-ul-Adha Mubarak!";
+                    if (countdownInterval) clearInterval(countdownInterval);
+                    return;
+                }
 
-            if (distance < 0) {
-                countdownElement.innerHTML = "Eid-ul-Adha Mubarak!";
-                if (countdownInterval) clearInterval(countdownInterval);
-                return;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `Eid Mubarak in: <br>
+                                            ${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownElement.innerHTML = `Eid Mubarak in: <br>
-                                        ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const sender = urlParams.get('sender');
-        const greetingMessageEl = document.getElementById('greetingMessage');
-        const senderNameDisplayEl = document.getElementById('senderNameDisplay');
-        
-        // ***** CHANGE 2: GET THE FORM AND HIDE/SHOW IT *****
-        const createWishForm = document.getElementById('createWishForm');
-
-        if (sender) {
-            // If a sender exists, this is a received wish.
-            // Show the greeting and HIDE the form.
-            const decodedSender = decodeURIComponent(sender);
-            greetingMessageEl.textContent = `${decodedSender} ki taraf se aapko bohat bohat Eid Mubarak!`;
-            senderNameDisplayEl.style.display = 'none';
-            document.title = `Aapko ${decodedSender} ki taraf se Eid Mubarak!`;
+            const urlParams = new URLSearchParams(window.location.search);
+            const sender = urlParams.get('sender');
+            const greetingMessageEl = document.getElementById('greetingMessage');
+            const senderNameDisplayEl = document.getElementById('senderNameDisplay');
             
-            // This is the FIX:
-            createWishForm.style.display = 'none';
+            if (sender) {
+                // Agar link mein sender ka naam hai (dost ne link khola hai)
+                // Sirf message badlo, form ko mat chupao.
+                const decodedSender = decodeURIComponent(sender);
+                greetingMessageEl.textContent = `${decodedSender} ki taraf se aapko bohat bohat Eid Mubarak!`;
+                senderNameDisplayEl.style.display = 'none';
+                document.title = `Aapko ${decodedSender} ki taraf se Eid Mubarak!`;
+                
+                // YAHAN PAR GALTI THI, ISKO HATA DIYA GAYA HAI
+                // createWishForm.style.display = 'none'; 
 
-        } else {
-            // If no sender, this is the main page for creating a wish.
-            // Show the generic greeting and the form.
-            greetingMessageEl.textContent = `🎉 Eid-ul-Adha Mubarak! 🎉`;
-            senderNameDisplayEl.textContent = `Apni wishes share karein!`;
-            senderNameDisplayEl.style.display = 'block';
-            document.title = "Eid-ul-Adha Wishes";
-
-            // Make sure the form is visible
-            createWishForm.style.display = 'block';
-        }
-        
-        updateVisitorDisplay();
-        updateCountdown();
-        countdownInterval = setInterval(updateCountdown, 1000);
-    });
-
-    function generateAndShareViaWhatsApp() {
-        const nameInput = document.getElementById('nameInput');
-        const name = nameInput.value.trim();
-        if (name === "") {
-            alert("Please apna naam likhein!");
-            return;
-        }
-        const encodedName = encodeURIComponent(name);
-        const baseUrl = window.location.origin + window.location.pathname;
-        const newLink = `${baseUrl}?sender=${encodedName}`;
-        const generatedLinkEl = document.getElementById('generatedLink');
-        generatedLinkEl.textContent = newLink;
-        document.getElementById('generatedLinkContainer').style.display = 'block';
-        addCreator(name);
-        updateVisitorDisplay();
-        const shareTextBody = `${name} ki taraf se aapko Eid-ul-Adha bohat bohat Mubarak! 🐑🐄🐪\nMera special Eid card dekhein aur aap bhi apna banayein:`;
-        const fullMessageForWhatsApp = `${shareTextBody} ${newLink}`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(fullMessageForWhatsApp)}`;
-        window.open(whatsappUrl, '_blank');
-    }
-
-    function copyLink() {
-        const linkText = document.getElementById('generatedLink').textContent;
-        if (!linkText) {
-            alert("Pehle 'Share With Friends' par click karke link generate karein.");
-            return;
-        }
-        navigator.clipboard.writeText(linkText).then(function() {
-            alert('Link copy ho gaya!');
-        }, function(err) {
-            alert('Link copy karne mein masla hua. Please manual copy kar lein.');
-            console.error('Could not copy text: ', err);
+            } else {
+                // Agar link mein naam nahi hai (pehli baar open hua hai)
+                greetingMessageEl.textContent = `🎉 Eid-ul-Adha Mubarak! 🎉`;
+                senderNameDisplayEl.textContent = `Apni wishes share karein!`;
+                senderNameDisplayEl.style.display = 'block';
+                document.title = "Eid-ul-Adha Wishes";
+            }
+            
+            updateVisitorDisplay();
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
         });
-    }
 
-    function shareOnOtherApps() {
-        const name = document.getElementById('nameInput').value.trim();
-        const linkToShare = document.getElementById('generatedLink').textContent;
-        if (!name || !linkToShare) {
-            alert("Pehle 'Share With Friends' par click karke link generate karein, phir share karein.");
-            return;
+        function generateAndShareViaWhatsApp() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+            if (name === "") {
+                alert("Please apna naam likhein!");
+                return;
+            }
+            const encodedName = encodeURIComponent(name);
+            const baseUrl = window.location.origin + window.location.pathname;
+            const newLink = `${baseUrl}?sender=${encodedName}`;
+            const generatedLinkEl = document.getElementById('generatedLink');
+            generatedLinkEl.textContent = newLink;
+            document.getElementById('generatedLinkContainer').style.display = 'block';
+            addCreator(name);
+            updateVisitorDisplay();
+            const shareTextBody = `${name} ki taraf se aapko Eid-ul-Adha bohat bohat Mubarak! 🐑🐄🐪\nMera special Eid card dekhein aur aap bhi apna banayein:`;
+            const fullMessageForWhatsApp = `${shareTextBody} ${newLink}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(fullMessageForWhatsApp)}`;
+            window.open(whatsappUrl, '_blank');
         }
-        const shareTitle = `Eid-ul-Adha Mubarak from ${name}!`;
-        const shareTextBody = `${name} ki taraf se aapko Eid-ul-Adha bohat bohat Mubarak! 🐑🐄🐪\nMera special Eid card dekhein aur aap bhi apna banayein:`;
-        if (navigator.share) {
-            navigator.share({
-                title: shareTitle,
-                text: shareTextBody,
-                url: linkToShare,
-            })
-            .then(() => console.log('Successfully shared via Web Share API'))
-            .catch((error) => {
-                console.log('Error sharing with Web Share API:', error);
+
+        function copyLink() {
+            const linkText = document.getElementById('generatedLink').textContent;
+            if (!linkText) {
+                alert("Pehle 'Share With Friends' par click karke link generate karein.");
+                return;
+            }
+            navigator.clipboard.writeText(linkText).then(function() {
+                alert('Link copy ho gaya!');
+            }, function(err) {
+                alert('Link copy karne mein masla hua. Please manual copy kar lein.');
+                console.error('Could not copy text: ', err);
             });
-        } else {
-            alert("Aapka browser native sharing support nahi karta. Link copy karke share karein.");
-            copyLink();
         }
-    }
 
-    function getCreators() {
-        const creatorsJSON = localStorage.getItem('eidAdhaLinkCreators');
-        try {
-            const parsed = JSON.parse(creatorsJSON);
-            return Array.isArray(parsed) ? [...new Set(parsed)] : [];
-        } catch (e) {
-            return [];
+        function shareOnOtherApps() {
+            const name = document.getElementById('nameInput').value.trim();
+            const linkToShare = document.getElementById('generatedLink').textContent;
+            if (!name || !linkToShare) {
+                alert("Pehle 'Share With Friends' par click karke link generate karein, phir share karein.");
+                return;
+            }
+            const shareTitle = `Eid-ul-Adha Mubarak from ${name}!`;
+            const shareTextBody = `${name} ki taraf se aapko Eid-ul-Adha bohat bohat Mubarak! 🐑🐄🐪\nMera special Eid card dekhein aur aap bhi apna banayein:`;
+            if (navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: shareTextBody,
+                    url: linkToShare,
+                })
+                .then(() => console.log('Successfully shared via Web Share API'))
+                .catch((error) => {
+                    console.log('Error sharing with Web Share API:', error);
+                });
+            } else {
+                alert("Aapka browser native sharing support nahi karta. Link copy karke share karein.");
+                copyLink();
+            }
         }
-    }
 
-    function addCreator(name) {
-        if (!name) return;
-        let creators = getCreators();
-        if (!creators.includes(name)) {
-            creators.push(name);
-            localStorage.setItem('eidAdhaLinkCreators', JSON.stringify(creators));
+        function getCreators() {
+            const creatorsJSON = localStorage.getItem('eidAdhaLinkCreators');
+            try {
+                const parsed = JSON.parse(creatorsJSON);
+                return Array.isArray(parsed) ? [...new Set(parsed)] : [];
+            } catch (e) {
+                return [];
+            }
         }
-    }
 
-    function updateVisitorDisplay() {
-        const creators = getCreators();
-        document.getElementById('visitorCount').textContent = creators.length;
-        const visitorListEl = document.getElementById('visitorList');
-        if (creators.length > 0) {
-            visitorListEl.innerHTML = '';
-            creators.forEach(creatorName => {
-                const p = document.createElement('p');
-                p.textContent = creatorName;
-                p.style.margin = '2px 0';
-                visitorListEl.appendChild(p);
-            });
-        } else {
-            visitorListEl.textContent = 'None yet.';
+        function addCreator(name) {
+            if (!name) return;
+            let creators = getCreators();
+            if (!creators.includes(name)) {
+                creators.push(name);
+                localStorage.setItem('eidAdhaLinkCreators', JSON.stringify(creators));
+            }
         }
-    }
-</script>
 
+        function updateVisitorDisplay() {
+            const creators = getCreators();
+            document.getElementById('visitorCount').textContent = creators.length;
+            const visitorListEl = document.getElementById('visitorList');
+            if (creators.length > 0) {
+                visitorListEl.innerHTML = '';
+                creators.forEach(creatorName => {
+                    const p = document.createElement('p');
+                    p.textContent = creatorName;
+                    p.style.margin = '2px 0';
+                    visitorListEl.appendChild(p);
+                });
+            } else {
+                visitorListEl.textContent = 'None yet.';
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-Ma na link apna friend ko share keya magr us ko option nehi aay rha aaga share karna ke leya tum ek cheez add karta ho magr dusre cheez cut kar deta ha Aur open be fast nehi ho rha assa karo jasia kyu link par click kara seeda Open ho page
