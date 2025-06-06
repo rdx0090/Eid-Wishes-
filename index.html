@@ -63,15 +63,18 @@
             margin-bottom: 15px;
         }
 
+        /* Creator name style is still here, but the element is moved to the bottom */
         .creator-name {
             font-family: 'Cinzel Decorative', cursive;
             font-size: 1.2em;
             color: #FF1493;
-            margin-top: 15px; /* Added some space between ad and name */
-            margin-bottom: 8px;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
             animation: pulseCreator 2.5s infinite ease-in-out;
+            margin-top: 25px; /* Space above the creator name */
+            padding-top: 15px; /* Padding for the top border */
+            border-top: 1px dashed #DAA520; /* Separator line */
+            margin-bottom: 0; /* No extra space at the very bottom */
         }
 
         @keyframes pulseCreator {
@@ -259,7 +262,7 @@
     <div class="container">
 
         <div class="creator-ad-banner">
-            <!-- AD CODE MOVED HERE -->
+            <!-- AD CODE REMAINS HERE -->
             <script type="text/javascript">
                 atOptions = {
                     'key' : '106d02ac509fe202fd6788c7e7a5f55e',
@@ -271,9 +274,7 @@
             </script>
             <script type="text/javascript" src="//www.highperformanceformat.com/106d02ac509fe202fd6788c7e7a5f55e/invoke.js"></script>
 
-            <p class="creator-name">Created By Shahin Mangral</p>
-
-            <!-- OLD SMALLER AD WAS HERE, NOW REMOVED -->
+            <!-- The creator name was here, now moved to the bottom -->
         </div>
 
         <img id="eidGif" src="Eid2025.gif" alt="Eid Mubarak Animation" loading="lazy" decoding="async">
@@ -308,8 +309,9 @@
             <p>Names of creators (this browser):</p>
             <div id="visitorList" class="visitor-list">None yet.</div>
         </div>
-
-        <!-- AD FROM THE BOTTOM HAS BEEN MOVED TO THE TOP -->
+        
+        <!-- CREATOR NAME MOVED HERE TO THE BOTTOM -->
+        <p class="creator-name">Created By Shahin Mangral</p>
 
     </div>
 
